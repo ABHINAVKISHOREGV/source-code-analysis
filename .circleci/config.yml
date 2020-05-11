@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: abhinavkishoregv/alpine-new-sca:latest
+      - image: 'node:latest'
     steps:
       - checkout
       - sonarcloud/scan
