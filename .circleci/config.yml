@@ -3,10 +3,12 @@ version: 2.1
 # Use a package of configuration called an orb.
 jobs:
   build:
-    docker:
-      - image: abhinavkishoregv/ruby-custom
+    machine: true
     steps:
       - checkout
+      - run: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      - run: docker pull  abhinavkishoregv/ruby-custom
+      - run: docker run -it  abhinavkishoregv/ruby-custom sh
       - sonarcloud/scan
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.0
