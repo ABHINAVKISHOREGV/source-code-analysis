@@ -2,10 +2,10 @@ version: 2.1
 jobs:
   build:
     docker:
-      image: abhinavkishoregv/ruby-custom
-      auth:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
+      - image: abhinavkishoregv/ruby-custom
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
     steps:
       - checkout
       - sonarcloud/scan
