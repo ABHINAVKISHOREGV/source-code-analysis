@@ -1,4 +1,4 @@
-version: 3
+version: 2.1
 jobs:
   build:
     docker:
@@ -13,8 +13,8 @@ orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.0
 
 workflows:
-  version: 3
-  main:
+  version: 2.1
+  sca-ruby:
     jobs:
       - build:
-          context: SonarCloud
+        context: SonarCloud
